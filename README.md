@@ -139,7 +139,7 @@ flowchart LR
     API --> DB
 
     DB --> Dashboard
-````
+```
 
 # 🗄 Data Model (Conceptual)
 
