@@ -82,4 +82,5 @@ export class TemplateGroupParams {
   id: bigint;
 }
 
+@Schema()
 export class ListTemplateGroupResponse extends Paginated(TemplateGroupResponse) {}

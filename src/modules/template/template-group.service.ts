@@ -65,7 +65,7 @@ export class TemplateGroupService {
   }
 
   async listTemplateGroups(filter: ListTemplateQuery = {}, pagination: Pagination = {}): Promise<OffsetPaginationResult<Template.Group>> {
-    const query = utils.pagination.normalise(pagination, { mode: 'offset', defaults: { limit: 20, offset: 0, sortBy: 'createdAt', sortOrder: 'asc' } });
+    const query = utils.pagination.normalise(pagination, { mode: 'offset', defaults: { limit: 20, offset: 0, sortBy: 'updatedAt', sortOrder: 'desc' } });
     const sortOrder = query.sortOrder === 'asc' ? asc : desc;
     const sortField = query.sortBy === 'createdAt' ? schema.templateGroups.createdAt : schema.templateGroups.updatedAt;
     const where = filter.key ? like(schema.templateGroups.templateKey, `%${filter.key}%`) : undefined;
