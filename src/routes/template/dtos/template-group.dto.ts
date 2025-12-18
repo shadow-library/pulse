@@ -20,7 +20,7 @@ import { type Notification, schema } from '@modules/datastore';
 
 @Schema()
 export class TemplateGroupResponse {
-  @Field(() => Number)
+  @Field(() => String)
   id: bigint;
 
   @Field()

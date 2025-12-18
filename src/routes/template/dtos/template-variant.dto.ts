@@ -26,7 +26,7 @@ export class CreateTemplateVariantBody {
   @Field()
   locale: string;
 
-  @Field({ optional: true, requiredIf: '' })
+  @Field({ optional: true })
   @Transform('strip:null')
   subject?: string | null;
 

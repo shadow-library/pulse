@@ -46,7 +46,7 @@ export class TemplateVariantController {
   @Get('/:variantId')
   @RespondFor(200, TemplateVariantResponse)
   async getTemplateVariant(@Params() params: TemplateVariantParams): Promise<TemplateVariantResponse> {
-    const templateVariant = await this.templateVariantService.getTemplateVarianById(params.groupId, params.variantId);
+    const templateVariant = await this.templateVariantService.getTemplateVariantById(params.groupId, params.variantId);
     if (!templateVariant) throw new ServerError(AppErrorCode.TPL_VRT_001);
     return templateVariant;
   }

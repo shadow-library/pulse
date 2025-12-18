@@ -40,7 +40,7 @@ export class TemplateVariantService {
     this.db = datastoreService.getPrimaryDatabase();
   }
 
-  async getTemplateVarianById(templateGroupId: bigint, templateVariantId: bigint): Promise<Template.Variant | null> {
+  async getTemplateVariantById(templateGroupId: bigint, templateVariantId: bigint): Promise<Template.Variant | null> {
     const templateVariant = await this.db.query.templateVariants.findFirst({
       where: and(eq(schema.templateVariants.templateGroupId, templateGroupId), eq(schema.templateVariants.id, templateVariantId)),
     });
