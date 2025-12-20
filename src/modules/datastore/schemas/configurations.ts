@@ -25,7 +25,7 @@ export namespace Configuration {
  * Declaring the constants
  */
 
-export const notificationServiceProviders = pgEnum('notification_service_providers', ['SEND_GRID', 'TWILIO', 'FIREBASE', 'AWS_SES']);
+export const notificationServiceProviders = pgEnum('notification_service_providers', ['SENDGRID', 'TWILIO', 'FIREBASE', 'AWS_SES']);
 
 export const senderProfiles = pgTable('sender_profiles', {
   id: bigserial('id', { mode: 'bigint' }).primaryKey(),
@@ -67,6 +67,8 @@ export const senderProfileAssignments = pgTable(
     messageType: messageTypes('message_type').notNull(),
     region: varchar('region', { length: 2 }),
     serviceName: varchar('service_name', { length: 100 }),
+    createdAt: timestamp('created_at').notNull().defaultNow(),
+    updatedAt: timestamp('updated_at').notNull().defaultNow(),
   },
   t => [primaryKey({ columns: [t.serviceName, t.messageType, t.region] })],
 );
