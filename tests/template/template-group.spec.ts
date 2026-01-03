@@ -96,6 +96,7 @@ describe('Template Group', () => {
     it('should filter template groups by key', async () => {
       const response = await testEnv.getRouter().mockRequest().get('/api/v1/template-groups?key=reset');
 
+      expect(response.statusCode).toBe(200);
       expect(response.json()).toStrictEqual({
         total: 1,
         limit: 20,
