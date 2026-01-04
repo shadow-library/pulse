@@ -185,7 +185,7 @@ describe('Template Variant', () => {
       });
     });
 
-    it.only('should not add or update channel settings when second variant is added for same channel', async () => {
+    it('should not add or update channel settings when second variant is added for same channel', async () => {
       const db = testEnv.getPrimaryDatabase();
       const body = {
         channel: 'SMS',
