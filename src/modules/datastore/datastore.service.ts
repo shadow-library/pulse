@@ -36,7 +36,7 @@ export class DatastoreService {
   constructor() {
     const queryLogger = this.getQueryLogger();
     const primaryDatabaseURL = Config.get('db.primary.url');
-    this.primaryDB = drizzle(primaryDatabaseURL, { schema, logger: queryLogger });
+    this.primaryDB = drizzle({ schema, logger: queryLogger, connection: { url: primaryDatabaseURL, max: 1 } });
   }
 
   private getQueryLogger(): QueryLogger {
