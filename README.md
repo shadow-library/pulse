@@ -1,3 +1,6 @@
+> **Archived — migrated to the [platform monorepo](https://github.com/shadow-library/platform).**
+> This code now lives at [`apps/pulse-server`](https://github.com/shadow-library/platform/tree/main/apps/pulse-server) with its full history; this repository is read-only.
+
 # Shadow Pulse Server
 
 **Shadow Pulse** is a centralized, multi-channel notification platform designed to manage templates and deliver messages reliably across Email, SMS, Push, WhatsApp, and future channels.  
